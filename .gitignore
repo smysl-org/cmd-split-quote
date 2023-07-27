@@ -1,23 +1,16 @@
+# utils
+.vscode-test
+*.bat
+*.iml
+.idea/
+
 # Logs
 logs
 *.log
 
 # Output
 *.tgz
+*.tar.gz
 *.zip
 out
 dist
-
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
-
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
-
-# idea
-*.iml
-.idea/

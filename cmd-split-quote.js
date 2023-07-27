@@ -8,13 +8,8 @@
 		},
 		txtExec: ['[/quote]', '[quote]'],
 		exec: function () {
-			
-			var rangeHelper = this.getRangeHelper();
-			var range = rangeHelper ? null : rangeHelper.selectedRange();
-			var newLine =  (range && !range.collapsed) ? '\n' : '';
-
 			// TODO: restore cursor position
-			this.insert('[/quote]' + newLine,'[quote]');
+			this.insert('[/quote]\n\n','\n\n[quote]');
 			this.toggleSourceMode();
 			this.toggleSourceMode();
 		}
