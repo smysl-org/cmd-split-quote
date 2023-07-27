@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>smysl-org:cmd-split-quote</id>
+	<name>Split a quote command and button</name>
+	<version>1.0.0</version>
+	<type>modification</type>
+
+	<install for="2.1 - 2.1.99, 2.1 RC1, 2.1 RC2, 2.1 RC3">
+		<readme parsebbc="true">readme.txt</readme>
+		<hook hook="integrate_sceditor_options" function="CmdSplitQuoteSetup::integrate_sceditor_options" file="$sourcedir/Class-cmd-split-quote.php" />
+		<hook hook="integrate_bbc_buttons" function="CmdSplitQuoteSetup::integrate_bbc_buttons" file="$sourcedir/Class-cmd-split-quote.php" />
+		<require-file name="Class-cmd-split-quote.php" destination="$sourcedir" />
+		<require-file name="cmd-split-quote.english.php" destination="$themedir/languages" />
+		<require-file name="cmd-split-quote.russian.php" destination="$themedir/languages" />
+		<require-file name="cmd-split-quote.png" destination="$themedir/images/bbcode" />
+		<require-file name="cmd-split-quote.js" destination="$themedir/scripts" />
+		<require-file name="cmd-split-quote.css" destination="$themedir/css" />
+	</install>
+
+	<uninstall for="2.1 - 2.1.99, 2.1 RC1, 2.1 RC2, 2.1 RC3">
+		<hook hook="integrate_sceditor_options" function="CmdSplitQuoteSetup::integrate_sceditor_options" file="$sourcedir/Class-cmd-split-quote.php" reverse="true" />
+		<hook hook="integrate_bbc_buttons" function="CmdSplitQuoteSetup::integrate_bbc_buttons" file="$sourcedir/Class-cmd-split-quote.php" reverse="true" />
+		<remove-file name="$sourcedir/Class-cmd-split-quote.php" />
+		<remove-file name="$themedir/languages/cmd-split-quote.english.php" />
+		<remove-file name="$themedir/languages/cmd-split-quote.russian.php" />
+		<remove-file name="$themedir/images/bbcode/cmd-split-quote.png" />
+		<remove-file name="$themedir/scripts/cmd-split-quote.js" />
+		<remove-file name="$themedir/css/cmd-split-quote.css" />
+	</uninstall>
+
+</package-info>
